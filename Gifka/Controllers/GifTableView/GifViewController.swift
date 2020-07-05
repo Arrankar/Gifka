@@ -14,12 +14,16 @@ class GifViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var serachTextFieldConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonWidthConstraint: NSLayoutConstraint!
     
     var dataManager = DataManager()
     var gifs = [Gifs]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.buttonWidthConstraint.constant = 0
         
         searchTextField.delegate = self
         
@@ -29,6 +33,7 @@ class GifViewController: UIViewController {
         tableView.backgroundColor = .clear
         view.backgroundColor = #colorLiteral(red: 0.7681049705, green: 1, blue: 0.9786186814, alpha: 1)
         tableView.register(UINib(nibName: "GifTableViewCell", bundle: nil), forCellReuseIdentifier: "GifTableViewCell")
+        
         DispatchQueue.global().async {
             self.loadGifs(for: "cats")
         }
@@ -41,6 +46,17 @@ class GifViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.buttonWidthConstraint.constant = 0
+            self.view.layoutIfNeeded()
+        })
+        searchTextField.text = ""
+        searchTextField.endEditing(true)
+        loadGifs(for: "cats")
     }
 }
 
@@ -86,26 +102,30 @@ extension GifViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension GifViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTextField.endEditing(true)
-        return true
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.25, animations: {
+            self.buttonWidthConstraint.constant = 50
+            self.view.layoutIfNeeded()
+        })
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != "" {
-            return true
-        } else {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == "" {
+            print(1)
             loadGifs(for: "cats")
-            return false
         }
+        searchTextField.endEditing(true)
+        return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let searchedText = searchTextField.text {
             loadGifs(for: searchedText)
         }
-        searchTextField.text = ""
     }
+    
+    
 }
 
 

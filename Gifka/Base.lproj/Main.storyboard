@@ -20,26 +20,40 @@
                                 <rect key="frame" x="0.0" y="86" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJY-mt-Rbc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJY-mt-Rbc">
+                                <rect key="frame" x="20" y="44" width="304" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eje-qN-DIb">
+                                <rect key="frame" x="334" y="44" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="QFw-uO-dSF"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0L7-m4-Ing"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BJY-mt-Rbc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9cd-os-CLN"/>
                             <constraint firstItem="tcH-De-hb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J76-67-QzL"/>
+                            <constraint firstItem="eje-qN-DIb" firstAttribute="leading" secondItem="BJY-mt-Rbc" secondAttribute="trailing" constant="10" id="OVJ-NA-Aaq"/>
                             <constraint firstItem="tcH-De-hb8" firstAttribute="top" secondItem="BJY-mt-Rbc" secondAttribute="bottom" constant="8" id="Z51-Tm-iGq"/>
-                            <constraint firstItem="BJY-mt-Rbc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dRe-OY-6Sw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BJY-mt-Rbc" secondAttribute="trailing" id="g6a-Ag-46k"/>
+                            <constraint firstItem="BJY-mt-Rbc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dRe-OY-6Sw"/>
+                            <constraint firstItem="eje-qN-DIb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hZi-vP-ll4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tcH-De-hb8" secondAttribute="bottom" id="hp4-6V-MhT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eje-qN-DIb" secondAttribute="trailing" constant="10" id="jWh-7s-bj6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tcH-De-hb8" secondAttribute="trailing" id="nBV-aa-4y3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonWidthConstraint" destination="QFw-uO-dSF" id="5Xp-YN-4fs"/>
                         <outlet property="searchTextField" destination="BJY-mt-Rbc" id="VWy-Q2-Zss"/>
+                        <outlet property="serachTextFieldConstraint" destination="OVJ-NA-Aaq" id="oby-UZ-AVu"/>
                         <outlet property="tableView" destination="tcH-De-hb8" id="k5S-sa-c6o"/>
                         <segue destination="jhg-8z-8M3" kind="show" identifier="fullImage" id="Fra-P5-Qwf"/>
                     </connections>
