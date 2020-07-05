@@ -124,8 +124,6 @@ extension GifViewController: UITextFieldDelegate {
             loadGifs(for: searchedText)
         }
     }
-    
-    
 }
 
 
