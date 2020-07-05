@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gif View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GifViewController" customModule="Gifka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tcH-De-hb8">
+                                <rect key="frame" x="0.0" y="86" width="414" height="776"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJY-mt-Rbc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BJY-mt-Rbc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9cd-os-CLN"/>
+                            <constraint firstItem="tcH-De-hb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J76-67-QzL"/>
+                            <constraint firstItem="tcH-De-hb8" firstAttribute="top" secondItem="BJY-mt-Rbc" secondAttribute="bottom" constant="8" id="Z51-Tm-iGq"/>
+                            <constraint firstItem="BJY-mt-Rbc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dRe-OY-6Sw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BJY-mt-Rbc" secondAttribute="trailing" id="g6a-Ag-46k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tcH-De-hb8" secondAttribute="bottom" id="hp4-6V-MhT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tcH-De-hb8" secondAttribute="trailing" id="nBV-aa-4y3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="BJY-mt-Rbc" id="VWy-Q2-Zss"/>
+                        <outlet property="tableView" destination="tcH-De-hb8" id="k5S-sa-c6o"/>
+                        <segue destination="jhg-8z-8M3" kind="show" identifier="fullImage" id="Fra-P5-Qwf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </scene>
+        <!--Full Image View Controller-->
+        <scene sceneID="BoC-j6-81m">
+            <objects>
+                <viewController id="jhg-8z-8M3" customClass="FullImageViewController" customModule="Gifka" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UjM-KZ-Bud">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HkU-ds-Lqw" customClass="SDAnimatedImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HkU-ds-Lqw" firstAttribute="leading" secondItem="zaj-jx-wh8" secondAttribute="leading" id="ICa-Yb-5aM"/>
+                            <constraint firstItem="zaj-jx-wh8" firstAttribute="trailing" secondItem="HkU-ds-Lqw" secondAttribute="trailing" id="RFR-rK-xAG"/>
+                            <constraint firstItem="HkU-ds-Lqw" firstAttribute="top" secondItem="zaj-jx-wh8" secondAttribute="top" id="jpz-Wm-IeM"/>
+                            <constraint firstItem="zaj-jx-wh8" firstAttribute="bottom" secondItem="HkU-ds-Lqw" secondAttribute="bottom" id="oYH-45-ctt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zaj-jx-wh8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lN4-hW-OGc"/>
+                    <connections>
+                        <outlet property="fullGifImage" destination="HkU-ds-Lqw" id="zSR-js-4AI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05c-Zz-ycW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="114"/>
+        </scene>
+    </scenes>
+</document>

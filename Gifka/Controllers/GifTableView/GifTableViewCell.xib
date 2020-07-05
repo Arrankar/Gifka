@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GifTableViewCell" rowHeight="187" id="KGk-i7-Jjw" customClass="GifTableViewCell" customModule="Gifka" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RoP-An-uQk">
+                        <rect key="frame" x="16" y="12" width="288" height="164"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fml-vh-Bbe" customClass="SDAnimatedImageView">
+                        <rect key="frame" x="16" y="12" width="288" height="164"/>
+                        <gestureRecognizers/>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ABT-9z-5jV">
+                        <rect key="frame" x="150" y="84" width="20" height="20"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Fml-vh-Bbe" secondAttribute="bottom" constant="11" id="Cw7-Qk-LIr"/>
+                    <constraint firstItem="Fml-vh-Bbe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IzV-2A-Itq"/>
+                    <constraint firstAttribute="bottom" secondItem="RoP-An-uQk" secondAttribute="bottom" constant="11" id="JWB-sr-vKj"/>
+                    <constraint firstItem="RoP-An-uQk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="JvD-zS-Sdo"/>
+                    <constraint firstItem="RoP-An-uQk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="KO8-DI-lcA"/>
+                    <constraint firstAttribute="trailing" secondItem="Fml-vh-Bbe" secondAttribute="trailing" constant="16" id="PPI-vn-M0S"/>
+                    <constraint firstAttribute="trailing" secondItem="RoP-An-uQk" secondAttribute="trailing" constant="16" id="TN8-rd-P6q"/>
+                    <constraint firstItem="ABT-9z-5jV" firstAttribute="centerX" secondItem="Fml-vh-Bbe" secondAttribute="centerX" id="eXd-BY-pPj"/>
+                    <constraint firstItem="ABT-9z-5jV" firstAttribute="centerY" secondItem="Fml-vh-Bbe" secondAttribute="centerY" id="xnm-xk-fyh"/>
+                    <constraint firstItem="Fml-vh-Bbe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="zMn-eV-TNC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="activityIndicator" destination="ABT-9z-5jV" id="dsi-Jw-sC3"/>
+                <outlet property="cardView" destination="RoP-An-uQk" id="RQh-HY-29W"/>
+                <outlet property="gifImage" destination="Fml-vh-Bbe" id="X8o-qY-oMw"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="176.45089285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
